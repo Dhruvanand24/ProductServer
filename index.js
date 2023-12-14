@@ -1,18 +1,25 @@
 const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-
+app.use(cors());
 const shopifyApiKey = '20413f9029c695a6bb194d66f1b34b82';
 const shopifyApiSecret = '45b70d9bae602557f168f0120ca9cdb5';
 const shopifyStore = 'made2automate';
 const adminApiAccessToken = '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';
 
 // Endpoint to add a product
+
+app.get('/ping', (req, res) => {
+  
+  res.send("server pinged!!")
+})
+
 app.post('/add-product', async (req, res) => {
   try {
     const productData = req.body;
