@@ -33,11 +33,12 @@ app.post('/add-product', async (req, res) => {
   try {
     const productData = req.body;
     
+    
 
     // Make a request to Shopify API to add the product
     const response = await axios.post(
       `https://${shopifyStore}.myshopify.com/admin/api/2021-07/products.json`,
-      { product: productData.product },
+      { product: productData },
       {
         headers: {
           'X-Shopify-Access-Token': adminApiAccessToken,
