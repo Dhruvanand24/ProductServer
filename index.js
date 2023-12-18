@@ -29,9 +29,10 @@ app.get('/ping', (req, res) => {
   res.send("server pinged!!");
 });
 
-app.get('/', (req,res)=>{
-  res.sendFile("https://media.istockphoto.com/id/1195743934/vector/cute-panda-character-vector-design.jpg?s=170667a&w=0&k=20&c=p-yYbgnagyjV22MPfdtksu0GelU_VnMLnWYg9v5Br8U=");
-})
+app.get('/', (req, res) => {
+  // Send HTML response with h1 tags
+  res.send('<h1>Welcome to made2automate product manager server</h1>');
+});
 
 app.post('/add-product', async (req, res) => {
   try {
